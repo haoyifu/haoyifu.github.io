@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>hexo创建博客 | 呆瓜</title>
+  <meta name="keywords" content>
+  <meta name="description" content="hexo创建博客 | 呆瓜">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="解决hexo搭建不能显示图片本地引用绝对引用:当Hexo项目中只用到少量图片时，可以将图片统一放在source/images文件夹中，通过markdown语法访问它们。 12文件source/images/image.jpg1![](/images/image.jpg) 相对引用图片除了可以放在统一的images文件夹中，还可以放在文章自己的目录中。文章的目录可以通过配置_config.yml来生">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo不能显示图片">
+<meta property="og:url" content="http://yoursite.com/2020/04/14/hexo不能显示图片/index.html">
+<meta property="og:site_name" content="呆瓜">
+<meta property="og:description" content="解决hexo搭建不能显示图片本地引用绝对引用:当Hexo项目中只用到少量图片时，可以将图片统一放在source/images文件夹中，通过markdown语法访问它们。 12文件source/images/image.jpg1![](/images/image.jpg) 相对引用图片除了可以放在统一的images文件夹中，还可以放在文章自己的目录中。文章的目录可以通过配置_config.yml来生">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2020/04/14/hexo不能显示图片/1.jpg">
+<meta property="og:updated_time" content="2020-04-14T12:21:03.474Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo不能显示图片">
+<meta name="twitter:description" content="解决hexo搭建不能显示图片本地引用绝对引用:当Hexo项目中只用到少量图片时，可以将图片统一放在source/images文件夹中，通过markdown语法访问它们。 12文件source/images/image.jpg1![](/images/image.jpg) 相对引用图片除了可以放在统一的images文件夹中，还可以放在文章自己的目录中。文章的目录可以通过配置_config.yml来生">
+<meta name="twitter:image" content="http://yoursite.com/2020/04/14/hexo不能显示图片/1.jpg">
+
+
+<link rel="icon" href="/img/top.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1.0.1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value>
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/top.jpg" />
+</a>
+<div class="author">
+    <span>付艺豪</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/haoyifu" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:460698021@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=460698021&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(2)</small></div></li>
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="2">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class=""
+           href="/2020/04/14/hexo不能显示图片/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="hexo不能显示图片">hexo不能显示图片</span>
+            <span class="post-date" title="2020-04-14 19:58:29">2020/04/14</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/04/14/hexo创建博客/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="hexo创建博客">hexo创建博客</span>
+            <span class="post-date" title="2020-04-14 16:29:16">2020/04/14</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-hexo创建博客" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">hexo创建博客</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-04-14 21:23:59'>2020-04-14 16:29</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#使用hexo搭建博客，部署到github和coding"><span class="toc-text">使用hexo搭建博客，部署到github和coding</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载git软件"><span class="toc-text">下载git软件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载node-js"><span class="toc-text">下载node.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#这两个软件安装没什么技术含量，一路下一步就可以-可以更改目录-。"><span class="toc-text">这两个软件安装没什么技术含量，一路下一步就可以(可以更改目录)。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注册账号"><span class="toc-text">注册账号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装hexo"><span class="toc-text">安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#初始化博客"><span class="toc-text">初始化博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将本地内容推送到网站"><span class="toc-text">将本地内容推送到网站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建博客"><span class="toc-text">创建博客</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="使用hexo搭建博客，部署到github和coding"><a href="#使用hexo搭建博客，部署到github和coding" class="headerlink" title="使用hexo搭建博客，部署到github和coding"></a>使用hexo搭建博客，部署到github和coding</h1><h2 id="下载git软件"><a href="#下载git软件" class="headerlink" title="下载git软件"></a>下载git软件</h2><p>官网：<a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com/</a></p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414123448020.png" alt="image-20200414123448020"></p>
+<h2 id="下载node-js"><a href="#下载node-js" class="headerlink" title="下载node.js"></a>下载node.js</h2><p>官网：<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/download/</a></p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414123631046.png" alt="image-20200414123631046"></p>
+<p>本人使用的是windows 10所以下的是windows版本</p>
+<h2 id="这两个软件安装没什么技术含量，一路下一步就可以-可以更改目录-。"><a href="#这两个软件安装没什么技术含量，一路下一步就可以-可以更改目录-。" class="headerlink" title="这两个软件安装没什么技术含量，一路下一步就可以(可以更改目录)。"></a>这两个软件安装没什么技术含量，一路下一步就可以(可以更改目录)。</h2><h2 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h2><p>分别在coding和github上创建账号，用户名建议都一样</p>
+<p>coding官网：<a href="https://coding.net/" target="_blank" rel="noopener">https://coding.net/</a></p>
+<p>github官网：<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a></p>
+<p>注册成功截图</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414132602418.png" alt="image-20200414132602418"></p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414132830043.png" alt="image-20200414132830043"></p>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>hexo官网：<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a></p>
+<p>由于官网上推荐的方法有点慢</p>
+<p>故采用其他的按爪给你方式</p>
+<p>打开git</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414132014394.png" alt="image-20200414132014394"></p>
+<p>更新源:npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414132331772.png" alt="image-20200414132331772"></p>
+<p>安装:cnpm install hexo-cli -g</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414132448209.png" alt="image-20200414132448209"></p>
+<h2 id="初始化博客"><a href="#初始化博客" class="headerlink" title="初始化博客"></a>初始化博客</h2><p>不要hexo init太慢</p>
+<p>过程在这：<a href="https://github.com/kjhuanhao/HEXO-HHC-BLOG" target="_blank" rel="noopener">https://github.com/kjhuanhao/HEXO-HHC-BLOG</a></p>
+<p>进入你要创建博客的文件夹中git bash 或者打开终端</p>
+<p>执行：git clone <a href="https://github.com/kjhuanhao/HEXO-HHC-BLOG.git" target="_blank" rel="noopener">https://github.com/kjhuanhao/HEXO-HHC-BLOG.git</a></p>
+<p>如果不成功多执行几次</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414133448678.png" alt="image-20200414133448678"></p>
+<p>你会得到一个文件夹，进入该文件夹</p>
+<p> cd HEXO-HHC-BLOG/</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414133637218.png" alt="image-20200414133637218"></p>
+<p>然后更新</p>
+<p>cnpm install</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414133836800.png" alt="image-20200414133836800"></p>
+<p>查看博客</p>
+<p>hexo  s</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414134110631.png" alt="image-20200414134110631"></p>
+<p>打开浏览器访问</p>
+<p> <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414134251140.png" alt="image-20200414134251140"></p>
+<p>用git生成公钥，并配置到coding和github上。</p>
+<p>生成公钥</p>
+<p>可以参考<a href="https://help.coding.net/docs/project/features/ssh.html#pageTitle" target="_blank" rel="noopener">https://help.coding.net/docs/project/features/ssh.html#pageTitle</a></p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414140052957.png" alt="image-20200414140052957"></p>
+<p>生成公钥（生成中可以一直回车）</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414140339357.png" alt="image-20200414140339357"></p>
+<p>上到这个目录下</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414140445757.png" alt="image-20200414140445757"></p>
+<p>用记事本打开，并复制这里的内容。</p>
+<p><strong><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414140627657.png" alt="image-20200414140627657"></strong></p>
+<p>打开coding,将复制的东西加入coding公钥中</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414140848062.png" alt="image-20200414140848062"></p>
+<p>验证：ssh -T <a href="mailto:git@e.coding.net" target="_blank" rel="noopener">git@e.coding.net</a></p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414141742299.png" alt="image-20200414141742299"></p>
+<p>再次复制密钥粘贴到github上</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414141844232.png" alt="image-20200414141844232"></p>
+<p>验证</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414142634350.png" alt="image-20200414142634350"></p>
+<h2 id="将本地内容推送到网站"><a href="#将本地内容推送到网站" class="headerlink" title="将本地内容推送到网站"></a>将本地内容推送到网站</h2><p>进入到博客配置目录中</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414143002914.png" alt="image-20200414143002914"></p>
+<p>打开_config.yml</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414143227661.png" alt="image-20200414143227661"></p>
+<p>到最后，查看是有这些代码。没有添加</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414143134952.png" alt="image-20200414143134952"></p>
+<p>在coding上创建项目</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414143502411.png" alt="image-20200414143502411"></p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414143520200.png" alt="image-20200414143520200"></p>
+<p>选择代码托管</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414143610515.png" alt="image-20200414143610515"></p>
+<p>项目名称填写  用户名.coding.me 然后确定</p>
+<p>创建完项目后，打开</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414143842998.png" alt="image-20200414143842998"></p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414144900696.png" alt="image-20200414144900696"></p>
+<p>发布网站</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414144958272.png" alt="image-20200414144958272"></p>
+<p>保存</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414145127251.png" alt="image-20200414145127251"></p>
+<p>这里就是你的访问链接</p>
+<p>将这个地址加入</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414152446710.png" alt="image-20200414152446710"></p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414152402550.png" alt="image-20200414152402550"></p>
+<p>在github上创建项目</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414144052080.png" alt="image-20200414144052080"></p>
+<p>项目名字改为  用户名.github.io</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414144310717.png" alt="image-20200414144310717"></p>
+<p>进入项目</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414144455051.png" alt="image-20200414144455051"></p>
+<p>pages 设置</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414144542778.png" alt="image-20200414144542778"></p>
+<p>这里就是你的访问链接</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414144711363.png" alt="image-20200414144711363"></p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414153403010.png" alt="image-20200414153403010"></p>
+<p>复制后写入</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414153426144.png" alt></p>
+<p>coding和github上的https链接最后要加上,master</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414162442431.png" alt="image-20200414162442431"></p>
+<p>保存</p>
+<h2 id="创建博客"><a href="#创建博客" class="headerlink" title="创建博客"></a>创建博客</h2><p>打开git输入：hexo new 博客名字</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414145329916.png" alt="image-20200414145329916"></p>
+<p>下面的目录就是创建的博客目录</p>
+<p>到目录中</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414145404240.png" alt="image-20200414145404240"></p>
+<p>下载编写博客的编辑器编写博客</p>
+<p>写完后保存</p>
+<p> hexo clean 清除缓存文件 (<code>db.json</code>) 和已生成的静态文件 (<code>public</code>)</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414150631872.png" alt="image-20200414150631872"></p>
+<p>hexo g 部署之前预先生成静态文件</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414150703532.png" alt="image-20200414150703532"></p>
+<p>hexo d 上传到github和coding项目中</p>
+<p><img src="C:\Users\46069\AppData\Roaming\Typora\typora-user-images\image-20200414150750957.png" alt="image-20200414150750957"></p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 460698021@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>hexo创建博客</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="付艺豪">付艺豪</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-04-14, 16:29:16</p>
+    <p><span class="copy-title">最后更新:</span>2020-04-14, 21:23:59</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/04/14/hexo创建博客/" title="hexo创建博客">http://yoursite.com/2020/04/14/hexo创建博客/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2020 Fuyihao</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': [],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
