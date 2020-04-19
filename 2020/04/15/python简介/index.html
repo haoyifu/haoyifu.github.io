@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>xss注入总结 | 呆瓜</title>
-  <meta name="keywords" content=" xss , xss注入总结 , 网络安全 ">
-  <meta name="description" content="xss注入总结 | 呆瓜">
+  <title>python简介 | 呆瓜</title>
+  <meta name="keywords" content=" 编程 , python , python基础 ">
+  <meta name="description" content="python简介 | 呆瓜">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="python字符串和编码​        这只是本人的学习笔记，如果想学习python请浏览：https://www.liaoxuefeng.com/ 编码​        我们知道计算机是二进制的，在计算机内全部都是二进制的代码。一个二进制就是一个比特（bit）,一个字节是8个比特，一个字节可以代表的数字是2的8次方个。 ​        最先使用计算机的是美国，美国使用的是英语，英语的字母是非">
 <meta name="keywords" content="编程,python,python字符串编码">
@@ -299,9 +299,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-xss注入总结" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-python简介" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">xss注入总结</h1>
+        <h1 class="article-title">python简介</h1>
     
     <div class="article-meta">
         
@@ -309,25 +309,25 @@
         
         <span class="book">
             
-                <a  data-rel="网络安全">网络安全</a>
+                <a  data-rel="编程">编程</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a class="color4">xss</a>
+            <a class="color3">编程</a>
             
-            <a class="color3">xss注入总结</a>
+            <a class="color2">python</a>
             
-            <a class="color5">网络安全</a>
+            <a class="color4">python基础</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-04-17 14:57:36'>2020-04-17 12:52</time>
+        创建时间:<time class="date" title='更新时间: 2020-04-19 19:16:50'>2020-04-15 23:52</time>
         
     </div>
     <div class="article-meta">
@@ -349,7 +349,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#xss注入总结"><span class="toc-text">xss注入总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#xss简介"><span class="toc-text">xss简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xss漏洞的危害"><span class="toc-text">xss漏洞的危害</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#存在xss注入的地方"><span class="toc-text">存在xss注入的地方</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xss漏洞的类型"><span class="toc-text">xss漏洞的类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xss-FUZZ"><span class="toc-text">xss -FUZZ</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#python简介"><span class="toc-text">python简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#python解释器"><span class="toc-text">python解释器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何运行python"><span class="toc-text">如何运行python</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -365,69 +365,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="xss注入总结"><a href="#xss注入总结" class="headerlink" title="xss注入总结"></a>xss注入总结</h1><h2 id="xss简介"><a href="#xss简介" class="headerlink" title="xss简介"></a>xss简介</h2><p>​    XSS主要使用javascript，javascript 可以非常灵活的操作html、css和浏览器。xss就是攻击者在web页面插入恶意的Script代码，当用户浏览该页之时，嵌入其中web里面的Script代码会被执行，从而达到恶意攻击用户的特殊目的。</p>
-<p>​    当用户访问被XSS 注入的网页，XSS 代码就会被提取出来。</p>
-<p>​    用户浏览器就会解析这段XSS 代码，也就是说用户被攻击了。</p>
-<p>​    用户最简单的动作就是使用浏览器上网，并且浏览器中有javascript 解释器，</p>
-<p>可以解析javascript，然而浏览器不会判断代码是否恶意。</p>
-<h2 id="xss漏洞的危害"><a href="#xss漏洞的危害" class="headerlink" title="xss漏洞的危害"></a>xss漏洞的危害</h2><p>​    一句话概括是：javascript能干的事,xss都能干。</p>
-<p>​    xss可能带来的危害：网络钓鱼，窃取用户cookies资料，接取用户(浏览器)会话，强制弹出广告页面刷流量。网页挂马，进行恶意操作，进行大量的客户端攻击，获取客户端信息，控制受害者及其向其他网站发起攻击，结合其他漏洞，提升用户权限，传播跨站脚本蠕虫，等等</p>
-<h2 id="存在xss注入的地方"><a href="#存在xss注入的地方" class="headerlink" title="存在xss注入的地方"></a>存在xss注入的地方</h2><p>存在xss的条件：输入的代码，能够在web页面显示就有可能出现xss攻击。</p>
-<p>故xss存在的地方：留言板，聊天室，收集用户输入的地方。</p>
-<p>反射型xss：搜索框，用户登录(非持久性、参数跨站脚本、窃取用户cookie或进行钓鱼欺骗）</p>
-<p>存储型xss:   留言板，评论，博客日志（持久性跨站脚本、更具威胁性、渗透网站、挂马、蠕虫病毒、钓鱼）</p>
-<h2 id="xss漏洞的类型"><a href="#xss漏洞的类型" class="headerlink" title="xss漏洞的类型"></a>xss漏洞的类型</h2><p>​        反射型XSS只是简单的把用户输入的数据“反射”给浏览器.也就是说需要诱使用</p>
-<p>户“点击”一个恶意链接，才能攻击成功。反射型XSS也叫作“非持久型XSS” ，一般提交参数在url中。</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/9XokKjWSQ6fG.png?imageslim" alt="mark"></p>
-<p>​        储存型XSS会把用户输入的数据“储存”在服务器端。这种XSS具有很强的稳定 </p>
-<p>性，一般提交参数在post数据中。</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/9JSaYMqNsduB.png?imageslim" alt="mark"></p>
-<p>​        DOM型XSS、反射型XSS、存储型XSS的差别是在于DOM型XSS代码不需要服</p>
-<p>务器解析响应的直接参与，触发XSS靠的是浏览器DOM解析器的解析</p>
-<p>​        Flash XSS利用的是网页上flash文件缺陷来执行js脚本，一般是反射型xss，Flash xss属于反射型xss</p>
-<h2 id="xss-FUZZ"><a href="#xss-FUZZ" class="headerlink" title="xss -FUZZ"></a>xss -FUZZ</h2><p>​        XSS本质上是JS，但JS代码往往要在<script>标签内或者在 “O n” 事件和 </p>
-<p>“javascript” 伪协议内才可以执行，所以我们首先是需要了解HTML标签的结构，可</p>
-<p>以查看前面的 浏览器渲染原理.</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/8VKRK6gVi7np.png?imageslim" alt="mark"></p>
-<p>1.FUZZ标签</p>
-<p>获取可以绕过安全狗的标签</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/liHm4RPsbzuG.png?imageslim" alt="mark"></p>
-<p>2.把可以绕过安全狗的标签导出</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/Mtokgv8eIUos.png?imageslim" alt="mark"></p>
-<p>3.寻找可用的控制字符（替代空格）</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/OgYRtSuczP1i.png?imageslim" alt="mark"></p>
-<p>4.利用fuzz后的标签，控制字符，onload onerror属性进行组合判断是否绕过。</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/lwmyXhxOTFqB.png?imageslim" alt="mark"></p>
-<p>5.利用js来动态添加iframe来加载我们的payload code</p>
-<p><strong><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/VvPgGhG0OSp5.png?imageslim" alt="mark"></strong></p>
-<p>6.思路扩展</p>
-<p>在进行fuzz字符的同时对特殊字符进行编码</p>
-<h1 id="xss的构造"><a href="#xss的构造" class="headerlink" title="xss的构造"></a>xss的构造</h1><p>1.利用&lt;&gt;构造HTML/JS</p>
-<p>​    可以利用&lt;&gt;构造HTML标签和<script>标签</p>
-<p>​    在测试页面提交参数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 style=&apos;color:red&apos; &gt; 利用&lt;&gt;构造HTML/JS&lt;/h1&gt;</span><br><span class="line">&lt;script&gt;alert(/xss/)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>2.伪协议</p>
-<p>​    也可以使用javascript:为协议的方式的构造xss</p>
-<p>​    提交参数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;javascript:alert(/xss/)&quot;&gt;touch me!&lt;/a&gt;//然后点击超链接，即可触发xss</span><br><span class="line">&lt;img src=&quot;javascritp:alert(&apos;xss&apos;)&quot;&gt;//这种情况在ie6下测试成功</span><br></pre></td></tr></table></figure>
-<p>3，产生自己的事件</p>
-<p>​    事件驱动是一种比较经典的编程思想。在网页中会发生很多事件（比如鼠标移动，键盘输入等），js可以对这些事件进行响应。所以我们可以通过事件触发js函数，触发xss</p>
-<p>​    事件种类：</p>
-<p>windows    事件                对windows对象触发的事件</p>
-<p>form事件                            HTML表单内的动作触发的事件</p>
-<p>keyboard事件                    键盘按键</p>
-<p>mouse事件                        由鼠标或类似用户动作触发的事件</p>
-<p>media事件                        由多媒体触发的事件</p>
-<p>4.利用css跨站(方法比较老)</p>
-<p>利用css触发xss，这种方法比较古老，不适合现在主流的浏览器。</p>
-<p>在ie6下可以测试成功</p>
-<p>行内样式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;background-image:url(javascript:alert(/xss/))&quot;&gt;</span><br></pre></td></tr></table></figure>
-<p>页内样式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt; Body &#123;background-image:url(javascript:alert(/xss/))&#125;&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<p>外部样式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;./xss.css&quot;&gt;&lt;div&gt;hello&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-</script></p>
+        <h1 id="python简介"><a href="#python简介" class="headerlink" title="python简介"></a>python简介</h1><p>​    我们编写的python代码，其实是以.py为扩展名的文本文件，要想运行这个文件，就需要解释器。</p>
+<h2 id="python解释器"><a href="#python解释器" class="headerlink" title="python解释器"></a>python解释器</h2><p>​    CPython:基于c语言编写，python官方解释器。</p>
+<p>​    IPython:基于CPython之上的一个交互式解释器，也就是说，IPython只是在交互方式上有所增强，但是执行Python代码的功能和CPython是完全一样的。好比很多国产浏览器虽然外观不同，但内核其实都是调用了IE。</p>
+<p>​    CPython用<code>&gt;&gt;&gt;</code>作为提示符，而IPython用<code>In [序号]:</code>作为提示符。</p>
+<p>​    pypy:速度特别快，PyPy采用<a href="http://en.wikipedia.org/wiki/Just-in-time_compilation" target="_blank" rel="noopener">JIT技术</a>，对Python代码进行动态编译（注意不是解释），所以可以显著提高Python代码的执行速度。绝大部分Python代码都可以在PyPy下运行，但是PyPy和CPython有一些是不同的，这就导致相同的Python代码在两种解释器下执行可能会有不同的结果。</p>
+<p>​    Jython：运行在java平台上的解释器，可以直接把python代码编译成java字节执行。</p>
+<p>​    IronPython：IronPython和Jython类似，只不过IronPython是运行在微软.Net平台上的Python解释器，可以直接把Python代码编译成.Net的字节码。</p>
+<h2 id="如何运行python"><a href="#如何运行python" class="headerlink" title="如何运行python"></a>如何运行python</h2><p>1.交互式命令写写程序：没法保存。</p>
+<p>2.使用编辑器写代码，更改代码的后缀为.py在终端下运行python    xxx.py 运行python.,在mac和linux上这种文件是可以直接运行的，也就是不加python，只需在文件前加入(#!/usr/bin/env python3) 命令.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python3</span><br><span class="line">#告诉Linux/OS X系统，这是一个Python可执行程序，Windows系统会忽略这个注释</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">#告诉Python解释器，按照UTF-8编码读取源代码，否则，你在源代码中写的中文输出可能会有乱码</span><br></pre></td></tr></table></figure>
+<p>文章来源：<a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1016966024263840" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/1016959663602400/1016966024263840</a></p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 460698021@qq.com </span>
     </div>
@@ -440,12 +389,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>xss注入总结</p>
+    <p><span class="copy-title">文章标题:</span>python简介</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="付艺豪">付艺豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-04-17, 12:52:46</p>
-    <p><span class="copy-title">最后更新:</span>2020-04-17, 14:57:36</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/04/17/xss注入总结/" title="xss注入总结">http://yoursite.com/2020/04/17/xss注入总结/</a>
+    <p><span class="copy-title">发布时间:</span>2020-04-15, 23:52:53</p>
+    <p><span class="copy-title">最后更新:</span>2020-04-19, 19:16:50</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/04/15/python简介/" title="python简介">http://yoursite.com/2020/04/15/python简介/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
