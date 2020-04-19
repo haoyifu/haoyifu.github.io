@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>hexo创建博客 | 呆瓜</title>
-  <meta name="keywords" content>
-  <meta name="description" content="hexo创建博客 | 呆瓜">
+  <title>xss注入总结 | 呆瓜</title>
+  <meta name="keywords" content=" 网络安全 , xss , xss注入总结 ">
+  <meta name="description" content="xss注入总结 | 呆瓜">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="python字符串和编码​        这只是本人的学习笔记，如果想学习python请浏览：https://www.liaoxuefeng.com/ 编码​        我们知道计算机是二进制的，在计算机内全部都是二进制的代码。一个二进制就是一个比特（bit）,一个字节是8个比特，一个字节可以代表的数字是2的8次方个。 ​        最先使用计算机的是美国，美国使用的是英语，英语的字母是非">
 <meta name="keywords" content="编程,python,python字符串编码">
@@ -291,19 +291,35 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-hexo创建博客" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-xss注入总结" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">hexo创建博客</h1>
+        <h1 class="article-title">xss注入总结</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a  data-rel="网络安全">网络安全</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color5">网络安全</a>
+            
+            <a class="color4">xss</a>
+            
+            <a class="color3">xss注入总结</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-04-17 16:12:34'>2020-04-14 16:29</time>
+        创建时间:<time class="date" title='更新时间: 2020-04-17 14:57:36'>2020-04-17 12:52</time>
         
     </div>
     <div class="article-meta">
@@ -325,7 +341,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#使用hexo搭建博客，部署到github和coding"><span class="toc-text">使用hexo搭建博客，部署到github和coding</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载git软件"><span class="toc-text">下载git软件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载node-js"><span class="toc-text">下载node.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#这两个软件安装没什么技术含量，一路下一步就可以-可以更改目录-。"><span class="toc-text">这两个软件安装没什么技术含量，一路下一步就可以(可以更改目录)。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注册账号"><span class="toc-text">注册账号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装hexo"><span class="toc-text">安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#初始化博客"><span class="toc-text">初始化博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将本地内容推送到网站"><span class="toc-text">将本地内容推送到网站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建博客"><span class="toc-text">创建博客</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#xss注入总结"><span class="toc-text">xss注入总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#xss简介"><span class="toc-text">xss简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xss漏洞的危害"><span class="toc-text">xss漏洞的危害</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#存在xss注入的地方"><span class="toc-text">存在xss注入的地方</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xss漏洞的类型"><span class="toc-text">xss漏洞的类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xss-FUZZ"><span class="toc-text">xss -FUZZ</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -341,117 +357,69 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="使用hexo搭建博客，部署到github和coding"><a href="#使用hexo搭建博客，部署到github和coding" class="headerlink" title="使用hexo搭建博客，部署到github和coding"></a>使用hexo搭建博客，部署到github和coding</h1><h2 id="下载git软件"><a href="#下载git软件" class="headerlink" title="下载git软件"></a>下载git软件</h2><p>官网：<a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com/</a></p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/GX007phh2oy5.png?imageslim" alt="mark"></p>
-<h2 id="下载node-js"><a href="#下载node-js" class="headerlink" title="下载node.js"></a>下载node.js</h2><p>官网：<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/download/</a></p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/ttzQpXBAWHSt.png?imageslim" alt="mark"></p>
-<p>本人使用的是windows 10所以下的是windows版本</p>
-<h2 id="这两个软件安装没什么技术含量，一路下一步就可以-可以更改目录-。"><a href="#这两个软件安装没什么技术含量，一路下一步就可以-可以更改目录-。" class="headerlink" title="这两个软件安装没什么技术含量，一路下一步就可以(可以更改目录)。"></a>这两个软件安装没什么技术含量，一路下一步就可以(可以更改目录)。</h2><h2 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h2><p>分别在coding和github上创建账号，用户名建议都一样</p>
-<p>coding官网：<a href="https://coding.net/" target="_blank" rel="noopener">https://coding.net/</a></p>
-<p>github官网：<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a></p>
-<p>注册成功截图</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/OYvghyq5DaIU.png?imageslim" alt="mark"></p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/DtqDcL6qrIra.png?imageslim" alt="mark"></p>
-<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>hexo官网：<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a></p>
-<p>由于官网上推荐的方法有点慢</p>
-<p>故采用其他的按爪给你方式</p>
-<p>打开git</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/n3O1iTF84JRt.png?imageslim" alt="mark"></p>
-<p>更新源:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-<p>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/rTOb0rNeN5w8.png?imageslim" alt="mark"></p>
-<p>安装:cnpm install hexo-cli -g</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/AsRWTPvPO7xh.png?imageslim" alt="mark"></p>
-<h2 id="初始化博客"><a href="#初始化博客" class="headerlink" title="初始化博客"></a>初始化博客</h2><p>不要hexo init太慢</p>
-<p>过程在这：<a href="https://github.com/kjhuanhao/HEXO-HHC-BLOG" target="_blank" rel="noopener">https://github.com/kjhuanhao/HEXO-HHC-BLOG</a></p>
-<p>进入你要创建博客的文件夹中git bash 或者打开终端</p>
-<p>执行：git clone <a href="https://github.com/kjhuanhao/HEXO-HHC-BLOG.git" target="_blank" rel="noopener">https://github.com/kjhuanhao/HEXO-HHC-BLOG.git</a></p>
-<p>如果不成功多执行几次</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/2o8zARzjnST7.png?imageslim" alt="mark"></p>
-<p>你会得到一个文件夹，进入该文件夹</p>
-<p> cd HEXO-HHC-BLOG/</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/QwLl8CBderUn.png?imageslim" alt="mark"></p>
-<p>然后更新</p>
-<p>cnpm install</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/Lj9MDwtbKmQ0.png?imageslim" alt="mark"></p>
-<p>查看博客</p>
-<p>hexo  s</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/swgonYgnU7uH.png?imageslim" alt="mark"></p>
-<p>打开浏览器访问</p>
-<p> <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/EKeV80Gz8TQr.png?imageslim" alt="mark"></p>
-<p>用git生成公钥，并配置到coding和github上。</p>
-<p>生成公钥</p>
-<p>可以参考<a href="https://help.coding.net/docs/project/features/ssh.html#pageTitle" target="_blank" rel="noopener">https://help.coding.net/docs/project/features/ssh.html#pageTitle</a></p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/JzpGFqKoj6z2.png?imageslim" alt="mark"></p>
-<p>生成公钥（生成中可以一直回车）</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/BvtrDWXeYY37.png?imageslim" alt="mark"></p>
-<p>上到这个目录下</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/xOIIiD64Ja8c.png?imageslim" alt="mark"></p>
-<p>用记事本打开，并复制这里的内容。</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/DJJTIQPvOwGd.png?imageslim" alt="mark">**</p>
-<p>打开coding,将复制的东西加入coding公钥中</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/fI0aNt1fpKiE.png?imageslim" alt="mark"></p>
-<p>验证：ssh -T <a href="mailto:git@e.coding.net" target="_blank" rel="noopener">git@e.coding.net</a></p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/bD75cRaMdfgr.png?imageslim" alt="mark"></p>
-<p>再次复制密钥粘贴到github上</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/6YMLVIOfFRNP.png?imageslim" alt="mark"></p>
-<p>验证</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/d0zRl92vMhcl.png?imageslim" alt="mark"></p>
-<h2 id="将本地内容推送到网站"><a href="#将本地内容推送到网站" class="headerlink" title="将本地内容推送到网站"></a>将本地内容推送到网站</h2><p>进入到博客配置目录中</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/7OmqAhyoD181.png?imageslim" alt="mark"></p>
-<p>打开_config.yml</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/DU5KnH6kRQYT.png?imageslim" alt="mark"></p>
-<p>到最后，查看是有这些代码。没有添加</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/9bWVWnQl9s1Q.png?imageslim" alt="mark"></p>
-<p>在coding上创建项目</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/izp8IC2bO67T.png?imageslim" alt="mark"></p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/1FK7xuiqeCM5.png?imageslim" alt="mark"></p>
-<p>选择代码托管</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/RuG999hLGOO6.png?imageslim" alt="mark"></p>
-<p>项目名称填写  用户名.coding.me 然后确定</p>
-<p>创建完项目后，打开</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/YgmsLo8V4WOa.png?imageslim" alt="mark"></p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/NGqdSEeAuSBU.png?imageslim" alt="mark"></p>
-<p>发布网站</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/2LN9XT5FtMnr.png?imageslim" alt="mark"></p>
-<p>保存</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/8g7WhCIXmI8i.png?imageslim" alt="mark"></p>
-<p>这里就是你的访问链接</p>
-<p>将这个地址加入</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/qhtpRj0lMdM0.png?imageslim" alt="mark"></p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/AQWegdma93a4.png?imageslim" alt="mark"></p>
-<p>在github上创建项目</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/Ksa6hATRChnB.png?imageslim" alt="mark"></p>
-<p>项目名字改为  用户名.github.io</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/npWpFQvMsxXo.png?imageslim" alt="mark"></p>
-<p>进入项目</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/wHjtmC4el1b2.png?imageslim" alt="mark"></p>
-<p>pages 设置</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/gqBKRcKvut9y.png?imageslim" alt="mark"></p>
-<p>这里就是你的访问链接</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/L0zFj9NqPtfD.png?imageslim" alt="mark"></p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/xNgQAbVIPTzt.png?imageslim" alt="mark"></p>
-<p>复制后写入</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/aUeMzrutSgTD.png?imageslim" alt="mark"></p>
-<p>coding和github上的https链接最后要加上,master</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/ErIFfy3zdoaR.png?imageslim" alt="mark"></p>
-<p>保存</p>
-<h2 id="创建博客"><a href="#创建博客" class="headerlink" title="创建博客"></a>创建博客</h2><p>打开git输入：hexo new 博客名字</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/QeaQwIprQ4gD.png?imageslim" alt="mark"></p>
-<p>下面的目录就是创建的博客目录</p>
-<p>到目录中</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/WO4QhDoRNn0w.png?imageslim" alt="mark"></p>
-<p>下载编写博客的编辑器编写博客</p>
-<p>写完后保存</p>
-<p> hexo clean 清除缓存文件 (<code>db.json</code>) 和已生成的静态文件 (<code>public</code>)</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/B9J97BalWweF.png?imageslim" alt="mark"></p>
-<p>hexo g 部署之前预先生成静态文件</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/50iDjgWU5zcU.png?imageslim" alt="mark"></p>
-<p>hexo d 上传到github和coding项目中</p>
-<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/kQ8UCTNKTHVp.png?imageslim" alt="mark"></p>
-
+        <h1 id="xss注入总结"><a href="#xss注入总结" class="headerlink" title="xss注入总结"></a>xss注入总结</h1><h2 id="xss简介"><a href="#xss简介" class="headerlink" title="xss简介"></a>xss简介</h2><p>​    XSS主要使用javascript，javascript 可以非常灵活的操作html、css和浏览器。xss就是攻击者在web页面插入恶意的Script代码，当用户浏览该页之时，嵌入其中web里面的Script代码会被执行，从而达到恶意攻击用户的特殊目的。</p>
+<p>​    当用户访问被XSS 注入的网页，XSS 代码就会被提取出来。</p>
+<p>​    用户浏览器就会解析这段XSS 代码，也就是说用户被攻击了。</p>
+<p>​    用户最简单的动作就是使用浏览器上网，并且浏览器中有javascript 解释器，</p>
+<p>可以解析javascript，然而浏览器不会判断代码是否恶意。</p>
+<h2 id="xss漏洞的危害"><a href="#xss漏洞的危害" class="headerlink" title="xss漏洞的危害"></a>xss漏洞的危害</h2><p>​    一句话概括是：javascript能干的事,xss都能干。</p>
+<p>​    xss可能带来的危害：网络钓鱼，窃取用户cookies资料，接取用户(浏览器)会话，强制弹出广告页面刷流量。网页挂马，进行恶意操作，进行大量的客户端攻击，获取客户端信息，控制受害者及其向其他网站发起攻击，结合其他漏洞，提升用户权限，传播跨站脚本蠕虫，等等</p>
+<h2 id="存在xss注入的地方"><a href="#存在xss注入的地方" class="headerlink" title="存在xss注入的地方"></a>存在xss注入的地方</h2><p>存在xss的条件：输入的代码，能够在web页面显示就有可能出现xss攻击。</p>
+<p>故xss存在的地方：留言板，聊天室，收集用户输入的地方。</p>
+<p>反射型xss：搜索框，用户登录(非持久性、参数跨站脚本、窃取用户cookie或进行钓鱼欺骗）</p>
+<p>存储型xss:   留言板，评论，博客日志（持久性跨站脚本、更具威胁性、渗透网站、挂马、蠕虫病毒、钓鱼）</p>
+<h2 id="xss漏洞的类型"><a href="#xss漏洞的类型" class="headerlink" title="xss漏洞的类型"></a>xss漏洞的类型</h2><p>​        反射型XSS只是简单的把用户输入的数据“反射”给浏览器.也就是说需要诱使用</p>
+<p>户“点击”一个恶意链接，才能攻击成功。反射型XSS也叫作“非持久型XSS” ，一般提交参数在url中。</p>
+<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/9XokKjWSQ6fG.png?imageslim" alt="mark"></p>
+<p>​        储存型XSS会把用户输入的数据“储存”在服务器端。这种XSS具有很强的稳定 </p>
+<p>性，一般提交参数在post数据中。</p>
+<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/9JSaYMqNsduB.png?imageslim" alt="mark"></p>
+<p>​        DOM型XSS、反射型XSS、存储型XSS的差别是在于DOM型XSS代码不需要服</p>
+<p>务器解析响应的直接参与，触发XSS靠的是浏览器DOM解析器的解析</p>
+<p>​        Flash XSS利用的是网页上flash文件缺陷来执行js脚本，一般是反射型xss，Flash xss属于反射型xss</p>
+<h2 id="xss-FUZZ"><a href="#xss-FUZZ" class="headerlink" title="xss -FUZZ"></a>xss -FUZZ</h2><p>​        XSS本质上是JS，但JS代码往往要在<script>标签内或者在 “O n” 事件和 </p>
+<p>“javascript” 伪协议内才可以执行，所以我们首先是需要了解HTML标签的结构，可</p>
+<p>以查看前面的 浏览器渲染原理.</p>
+<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/8VKRK6gVi7np.png?imageslim" alt="mark"></p>
+<p>1.FUZZ标签</p>
+<p>获取可以绕过安全狗的标签</p>
+<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/liHm4RPsbzuG.png?imageslim" alt="mark"></p>
+<p>2.把可以绕过安全狗的标签导出</p>
+<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/Mtokgv8eIUos.png?imageslim" alt="mark"></p>
+<p>3.寻找可用的控制字符（替代空格）</p>
+<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/OgYRtSuczP1i.png?imageslim" alt="mark"></p>
+<p>4.利用fuzz后的标签，控制字符，onload onerror属性进行组合判断是否绕过。</p>
+<p><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/lwmyXhxOTFqB.png?imageslim" alt="mark"></p>
+<p>5.利用js来动态添加iframe来加载我们的payload code</p>
+<p><strong><img src="http://q8ve0k5kj.bkt.clouddn.com/fuyihao/20200417/VvPgGhG0OSp5.png?imageslim" alt="mark"></strong></p>
+<p>6.思路扩展</p>
+<p>在进行fuzz字符的同时对特殊字符进行编码</p>
+<h1 id="xss的构造"><a href="#xss的构造" class="headerlink" title="xss的构造"></a>xss的构造</h1><p>1.利用&lt;&gt;构造HTML/JS</p>
+<p>​    可以利用&lt;&gt;构造HTML标签和<script>标签</p>
+<p>​    在测试页面提交参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 style=&apos;color:red&apos; &gt; 利用&lt;&gt;构造HTML/JS&lt;/h1&gt;</span><br><span class="line">&lt;script&gt;alert(/xss/)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>2.伪协议</p>
+<p>​    也可以使用javascript:为协议的方式的构造xss</p>
+<p>​    提交参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;javascript:alert(/xss/)&quot;&gt;touch me!&lt;/a&gt;//然后点击超链接，即可触发xss</span><br><span class="line">&lt;img src=&quot;javascritp:alert(&apos;xss&apos;)&quot;&gt;//这种情况在ie6下测试成功</span><br></pre></td></tr></table></figure>
+<p>3，产生自己的事件</p>
+<p>​    事件驱动是一种比较经典的编程思想。在网页中会发生很多事件（比如鼠标移动，键盘输入等），js可以对这些事件进行响应。所以我们可以通过事件触发js函数，触发xss</p>
+<p>​    事件种类：</p>
+<p>windows    事件                对windows对象触发的事件</p>
+<p>form事件                            HTML表单内的动作触发的事件</p>
+<p>keyboard事件                    键盘按键</p>
+<p>mouse事件                        由鼠标或类似用户动作触发的事件</p>
+<p>media事件                        由多媒体触发的事件</p>
+<p>4.利用css跨站(方法比较老)</p>
+<p>利用css触发xss，这种方法比较古老，不适合现在主流的浏览器。</p>
+<p>在ie6下可以测试成功</p>
+<p>行内样式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;background-image:url(javascript:alert(/xss/))&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>页内样式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt; Body &#123;background-image:url(javascript:alert(/xss/))&#125;&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p>外部样式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;./xss.css&quot;&gt;&lt;div&gt;hello&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</script></p>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 460698021@qq.com </span>
     </div>
@@ -464,12 +432,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>hexo创建博客</p>
+    <p><span class="copy-title">文章标题:</span>xss注入总结</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="付艺豪">付艺豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-04-14, 16:29:16</p>
-    <p><span class="copy-title">最后更新:</span>2020-04-17, 16:12:34</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/04/14/hexo创建博客/" title="hexo创建博客">http://yoursite.com/2020/04/14/hexo创建博客/</a>
+    <p><span class="copy-title">发布时间:</span>2020-04-17, 12:52:46</p>
+    <p><span class="copy-title">最后更新:</span>2020-04-17, 14:57:36</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/04/17/xss注入总结/" title="xss注入总结">http://yoursite.com/2020/04/17/xss注入总结/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
